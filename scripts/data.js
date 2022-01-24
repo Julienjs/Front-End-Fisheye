@@ -1,0 +1,1 @@
+const fetchData = `data/photographers.json`

@@ -32,19 +32,98 @@ h1 {
 }
 
 .photographer_section article {
-    justify-self: center;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    cursor: pointer;
 }
 
 .photographer_section article h2 {
-    color: #D3573C;
+    color: #d3573c;
     font-size: 36px;
+    margin: 5px;
 }
 
-.photographer_section article img {
+.photographer_section article p {
+    margin: 0px;
+}
+
+.photographer_section article small {
+    color: rgb(155, 154, 154)
+}
+
+.image_profil {
+    object-fit: cover;
+    border-radius: 50%;
     height: 200px;
     width: 200px;
 }
+
+/* Média section */
+
+.media_section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 85%;
+    margin: auto;
+}
+
+.media_section form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.media_section form label {
+    font-size: 1.2em;
+    font-weight: 900;
+}
+
+.media_section form select {
+    border: none;
+    background-color: #901c1c;
+    color: white;
+    /* width: 150px; */
+    padding: 15px;
+    height: 50px;
+    font-size: 1.2em;
+    margin-left: 20px;
+    border-radius: 5px;
+}
+
+.media_section article {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.media_section article img,
+.media_section article video {
+    object-fit: cover;
+    width: 300px;
+    height: 300px;
+    border-radius: 5px;
+}
+
+
+.media_section article div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #901c1c;
+
+}
+
+.media_section article div h2 {
+    font-weight: 1;
+    font-size: 1.1em;
+}
+
+.media_section article div p {
+    font-weight: 900;
+}
+
+/* Photograph-Header */
