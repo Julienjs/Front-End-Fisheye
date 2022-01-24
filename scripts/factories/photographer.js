@@ -24,9 +24,9 @@ function photographerFactory(photographer) {
         article.appendChild(smallPrice);
 
         article.addEventListener("click", () => {
-            window.location.href = `photographer.html?id=${id}&name=${name}&picture=${picture}&country=${country}&tag=${tagline}`
+            window.location.href = `photographer.html?id=${id}&name=${name}&picture=${picture}&country=${country}&tag=${tagline}&price=${price}`
         });
         return article;
     }
-    return { name, picture, getUserCardDOM }
+    return { getUserCardDOM }
 };
