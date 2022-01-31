@@ -109,6 +109,11 @@ h1 {
     border-radius: 5px;
 }
 
+.logo_play {
+    /* width: 20px; */
+    position: absolute;
+    opacity: 0.2;
+}
 
 .media_section article div {
     display: flex;

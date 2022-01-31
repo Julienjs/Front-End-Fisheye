@@ -12,7 +12,9 @@
 
 <body>
   <header>
-    <img src="assets/images/logo.png" class="logo" />
+    <a href="index.html">
+      <img src="assets/images/logo.png" class="logo" />
+    </a>
   </header>
   <main id="main">
 
@@ -23,20 +25,22 @@
     <section class="media_section">
       <form action="">
         <label for="">Trier par</label>
-        <select type="selection">
-          <option class="popular " value="Popularité">Popularité</option>
+        <select>
+          <option class="popular " value="Popularité" style="border-bottom:1px solid white">Popularité</option>
           <option value="Date">Date</option>
           <option value="Titre">Titre</option>
         </select>
       </form>
     </section>
-
-    <section class="slider_section"></section>
+    <section class="lightbox_section"></section>
     <section class="total_likes"></section>
   </main>
+
   <script src="scripts/factories/media.js"></script>
+  <script src="scripts/factories/photograph-header.js"></script>
+  <script src="scripts/factories/like.js"></script>
+  <script src="scripts/factories/lightbox.js"></script>
   <script src="/scripts/factories/contactForm.js"></script>
   <script src="/scripts/pages/photographer.js"></script>
-</body>
 
-</html>
+</body>
