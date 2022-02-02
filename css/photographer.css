@@ -1,11 +1,13 @@
 #contact_modal {
     display: none;
+    z-index: 1;
 }
 
 .photograph-header {
     background-color: #FAFAFA;
+    width: 85%;
     height: 300px;
-    margin: 0 100px;
+    margin: auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -134,7 +136,7 @@
     margin-top: 30px;
 }
 
-/* slider */
+/* Lightbox */
 .lightbox_section {
     background-color: rgba(219, 218, 218, 0.7);
     position: fixed;
@@ -145,13 +147,13 @@
 }
 
 .lightbox_section article.active {
-    background-color: transparent;
+    /* background-color: transparent; */
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
-    width: 80%;
-    margin: auto;
+    width: 100%;
+    /* margin: auto; */
     animation: fade 0.3s;
 }
 
@@ -173,8 +175,8 @@
 
 .lightbox_section article .container_closeBtn {
     position: relative;
-    top: 15vh;
-    width: 55%;
+    top: 5vh;
+    width: 115%;
     display: flex;
     justify-content: flex-end;
 }
@@ -183,15 +185,27 @@
     width: 40px;
 }
 
+.lightbox_section article .container_img {
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+    height: 950px;
+}
+
 .lightbox_section article .media_slider {
-    width: 40%;
-    height: 700px;
+    width: inherit;
+    max-height: 85%;
     object-fit: cover;
     border-radius: 5px;
+    object-position: 50% 50%;
 }
 
 .lightbox_section article h2 {
-    width: 40%;
+    width: inherit;
+    min-width: 75%;
     text-align: left;
     font-weight: 500;
     font-size: 1.6em;
@@ -200,9 +214,9 @@
 
 .lightbox_section article .container_arrowBtn {
     /* border: solid black; */
-    position: relative;
-    top: 40vh;
-    width: 60%;
+    position: absolute;
+    /* top: 40vh;*/
+    width: 50%;
     display: flex;
     justify-content: space-between;
 }

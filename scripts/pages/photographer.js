@@ -70,34 +70,37 @@ function displayMediaData(media, photographer) {
 
 
 
-            // Gestion ajout d'un like
-            // const like = document.querySelectorAll(".media_section .container_like");
-            // const likeNumber = document.querySelectorAll(".container_like p");
-            // console.log(likeNumber);
-
-            // like.forEach((item) => {
-            //     item.addEventListener("click", (e) => {
-            //         // likeNumber.forEach(r => {
-            //         //     console.log(r);
-            //         // })
-            //         let t = Number(e.target.innerText);
-            //         if (t + 1) {
-
-            //             e.target.innerText = t + 1;
-            //             console.log(t);
+            // // Gestion ajout d'un like
+            // const containerLike = document.querySelectorAll(".media_section .container_like");
+            // containerLike.forEach((item) => {
+            //     let like = false;
+            //     item.lastChild.addEventListener("click", (e) => {
+            //         e.preventDefault()
+            //         if (!like) {
+            //             like = true;
+            //             item.firstChild.textContent++;
+            //             likesFactory()
             //         } else {
-            //             e.target.innerText = t - 1;
+            //             like = false;
+            //             item.firstChild.textContent--;
             //         }
-            //     })
+
+            //     });
             // })
 
-
-            // Gestion du total des likes
             const reducer = (previousValue, currentValue) => previousValue + currentValue;
             const total = likesArray.reduce(reducer);
             const photographerTotalLikes = likesFactory(total, photograph.price);
             const likesTotalCardDom = photographerTotalLikes.getLikesTotalCardDom();
             totalLikesSection.appendChild(likesTotalCardDom);
+
+            // Gestion du total des likes
+            // const reducer = (previousValue, currentValue) => previousValue + currentValue;
+            // const total = likesArray.reduce(reducer);
+            // console.log(likesArray);
+            // const photographerTotalLikes = likesFactory(total, photograph.price);
+            // const likesTotalCardDom = photographerTotalLikes.getLikesTotalCardDom();
+            // totalLikesSection.appendChild(likesTotalCardDom);
 
             // Gestion modal form
             const modalForm = modalFactory(photograph, modalFormSection);

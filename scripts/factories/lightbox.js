@@ -65,9 +65,12 @@ function lightboxFactory(article, index, lightBox) {
         const title = document.createElement("h2");
         const divClose = document.createElement("div");
         const imgClose = document.createElement('img');
+        const div = document.createElement("div");
+
 
         // Ajout des classes et attribut
         title.classList.add("title");
+        div.classList.add("container_img");
         divClose.classList.add("container_closeBtn");
         divArrow.classList.add("container_arrowBtn");
         imgClose.classList.add("close_slider");
@@ -107,11 +110,13 @@ function lightboxFactory(article, index, lightBox) {
             }
 
             divClose.appendChild(imgClose);
-            article.appendChild(divClose);
-            article.appendChild(divArrow);
-            article.appendChild(img);
-            article.appendChild(video);
-            article.appendChild(title);
+
+            article.appendChild(div);
+            div.appendChild(divClose);
+            div.appendChild(divArrow);
+            div.appendChild(img);
+            div.appendChild(video);
+            div.appendChild(title);
             lightBox.appendChild(article);
         };
 
