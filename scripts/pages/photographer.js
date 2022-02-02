@@ -36,82 +36,56 @@ function displayMediaData(media, photographer) {
     // const picture = [];
 
     // Gestion d'affichage du header
-    photographer.forEach((photograph) => {
-        if (uid === photograph.id) {
-            const photographeHeader = photographHeaderFactory(photograph, modalFormSection);
-            const photographeHeaderCardDom = photographeHeader.getPhotgraphHeaderCardDom();
-            photographHeader.appendChild(photographeHeaderCardDom)
+    const photographeHeader = photographHeaderFactory(photographer[0], modalFormSection);
+    const photographeHeaderCardDom = photographeHeader.getPhotgraphHeaderCardDom();
+    photographHeader.appendChild(photographeHeaderCardDom)
 
 
-            // Gestion d'affichage des médias par photographe
-            media.forEach((medias) => {
-                if (uid === medias.photographerId) {
-                    likesArray.push(medias.likes);
+    // Gestion d'affichage des médias par photographe
+    media.forEach(medias => {
+        likesArray.push(medias.likes);
+        const photographerMedia = mediaFactory(medias, photographer[0]);
+        const userMediaCardDOM = photographerMedia.getUserMediaCardDOM();
+        mediaSection.appendChild(userMediaCardDOM);
 
-                    const photographerMedia = mediaFactory(medias, photograph);
-                    const userMediaCardDOM = photographerMedia.getUserMediaCardDOM();
-                    mediaSection.appendChild(userMediaCardDOM);
-
-                }
-
-            });
-
-
-            // Gestion de la lightbox
-            const containerMedia = document.querySelectorAll(".container_media");
-
-            containerMedia.forEach((item, index) => {
-                const image = item.querySelector("img");
-                image.addEventListener("click", () => {
-                    lightboxSection.style.display = "block";
-                    lightboxFactory(containerMedia, index, lightboxSection);
-                });
-            });
+    });
 
 
 
-            // // Gestion ajout d'un like
-            // const containerLike = document.querySelectorAll(".media_section .container_like");
-            // containerLike.forEach((item) => {
-            //     let like = false;
-            //     item.lastChild.addEventListener("click", (e) => {
-            //         e.preventDefault()
-            //         if (!like) {
-            //             like = true;
-            //             item.firstChild.textContent++;
-            //             likesFactory()
-            //         } else {
-            //             like = false;
-            //             item.firstChild.textContent--;
-            //         }
+    // Gestion de la lightbox
+    const containerMedia = document.querySelectorAll(".container_media");
 
-            //     });
-            // })
+    containerMedia.forEach((item, index) => {
+        const image = item.querySelector("img");
+        image.addEventListener("click", () => {
+            lightboxSection.style.display = "block";
+            lightboxFactory(containerMedia, index, lightboxSection);
+        });
+    });
 
-            const reducer = (previousValue, currentValue) => previousValue + currentValue;
-            const total = likesArray.reduce(reducer);
-            const photographerTotalLikes = likesFactory(total, photograph.price);
-            const likesTotalCardDom = photographerTotalLikes.getLikesTotalCardDom();
-            totalLikesSection.appendChild(likesTotalCardDom);
+    // Gestion des likes
+    const reducer = (previousValue, currentValue) => previousValue + currentValue;
+    const total = likesArray.reduce(reducer);
+    const photographerTotalLikes = likesFactory(total, photographer[0].price);
+    const likesTotalCardDom = photographerTotalLikes.getLikesTotalCardDom();
+    totalLikesSection.appendChild(likesTotalCardDom);
 
-            // Gestion du total des likes
-            // const reducer = (previousValue, currentValue) => previousValue + currentValue;
-            // const total = likesArray.reduce(reducer);
-            // console.log(likesArray);
-            // const photographerTotalLikes = likesFactory(total, photograph.price);
-            // const likesTotalCardDom = photographerTotalLikes.getLikesTotalCardDom();
-            // totalLikesSection.appendChild(likesTotalCardDom);
 
-            // Gestion modal form
-            const modalForm = modalFactory(photograph, modalFormSection);
-            const modalFormCardDom = modalForm.modalFormCardDom();
-            modalFormSection.appendChild(modalFormCardDom);
-        }
-    })
-};
+    // Gestion modal form
+    const modalForm = modalFactory(photographer[0], modalFormSection);
+    const modalFormCardDom = modalForm.modalFormCardDom();
+    modalFormSection.appendChild(modalFormCardDom);
+}
+
 
 async function init() {
+    const recuperationUrl = window.location.search;
+    const extraction = new URLSearchParams(recuperationUrl);
+    const id = extraction.get("id");
+    const uid = Number(id);
     const media = await getMedia();
-    displayMediaData(media.media, media.photographers);
+    const targetPhotographer = media.photographers.filter(photograph => photograph.id === uid);
+    const targetMedia = media.media.filter(item => item.photographerId === uid);
+    displayMediaData(targetMedia, targetPhotographer);
 };
 init();

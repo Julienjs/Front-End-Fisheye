@@ -1,6 +1,6 @@
 
 function photographHeaderFactory(photograph, modalSection) {
-    const { name, tagLine, portrait, country } = photograph;
+    const { name, tagLine, portrait, country, city } = photograph;
     const picture = `../../assets/photographers/${portrait}`;
 
     function getPhotgraphHeaderCardDom() {
@@ -9,7 +9,7 @@ function photographHeaderFactory(photograph, modalSection) {
         const h1 = document.createElement('h1');
         h1.textContent = name;
         const h3 = document.createElement('h3');
-        h3.textContent = country;
+        h3.textContent = `${city} , ${country}`;
         const p = document.createElement('p');
         p.textContent = tagLine;
         const img = document.createElement('img');

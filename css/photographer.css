@@ -121,6 +121,15 @@
     border: none;
     border-radius: 5px;
     margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+#contact_modal article form span {
+    display: none;
+    color: rgb(212, 0, 0);
+    margin-bottom: 5px;
+    font-weight: 600;
+    width: 90%;
 }
 
 #contact_modal article form textarea {
@@ -130,10 +139,15 @@
     padding: 10px;
     height: 140px;
     box-sizing: border-box;
+    font-size: 1.2em;
+    resize: none;
 }
 
-#contact_modal button {
+#contact_modal .submit {
     margin-top: 30px;
+    width: 120px;
+    margin-right: 75%;
+    font-size: 1em;
 }
 
 /* Lightbox */

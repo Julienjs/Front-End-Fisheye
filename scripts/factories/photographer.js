@@ -1,7 +1,7 @@
 function photographerFactory(photographer) {
-    const { name, portrait, country, tagline, price, id } = photographer;
+    const { name, portrait, country, city, tagline, price, id } = photographer;
     const picture = `../../assets/photographers/${portrait}`;
-
+    console.log(photographer);
     function getUserCardDOM() {
         const article = document.createElement('article');
         const img = document.createElement('img');
@@ -11,7 +11,7 @@ function photographerFactory(photographer) {
         const h2 = document.createElement('h2');
         h2.textContent = name;
         const pCountry = document.createElement('p');
-        pCountry.textContent = country;
+        pCountry.textContent = `${city} , ${country} `;
         pCountry.style.color = "#901c1c"
         const pTagLine = document.createElement('p');
         pTagLine.textContent = tagline;

@@ -1,5 +1,6 @@
 
 function mediaFactory(media, photograph) {
+
     const { image, likes, title, id, video } = media;
     const { name } = photograph;
     const picture = `../../assets/media/${name.split(' ')[0]}/${image}`;
@@ -15,7 +16,6 @@ function mediaFactory(media, photograph) {
 
 
         const img = document.createElement('img');
-        img.setAttribute("src", picture);
         img.alt = `média intituler ${title}`
         img.classList.add("open-slider");
 
@@ -43,8 +43,9 @@ function mediaFactory(media, photograph) {
             logoPlay.src = playSvg;
             article.appendChild(logoPlay);
 
-        } else {
+        } else if (image != undefined) {
             article.appendChild(img);
+            img.setAttribute("src", picture);
 
 
         }
