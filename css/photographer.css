@@ -56,6 +56,8 @@
 }
 
 /* modal form */
+
+
 #contact_modal {
     display: none;
     position: fixed;
@@ -108,10 +110,16 @@
     align-items: center;
 }
 
+.form_group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 #contact_modal article form label {
     color: #312E2E;
     font-size: 1.2em;
-    /* border: solid red; */
     width: 90%;
 }
 
@@ -125,7 +133,6 @@
 }
 
 #contact_modal article form span {
-    display: none;
     color: rgb(212, 0, 0);
     margin-bottom: 5px;
     font-weight: 600;
@@ -150,6 +157,13 @@
     font-size: 1em;
 }
 
+#contact_modal .successModal {
+    position: relative;
+    top: 200px;
+    background-color: white;
+    width: 300px;
+}
+
 /* Lightbox */
 .lightbox_section {
     background-color: rgba(219, 218, 218, 0.7);
@@ -161,13 +175,10 @@
 }
 
 .lightbox_section article.active {
-    /* background-color: transparent; */
     display: flex;
-    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
     width: 100%;
-    /* margin: auto; */
     animation: fade 0.3s;
 }
 
@@ -189,7 +200,7 @@
 
 .lightbox_section article .container_closeBtn {
     position: relative;
-    top: 5vh;
+    top: 10vh;
     width: 115%;
     display: flex;
     justify-content: flex-end;
@@ -197,10 +208,10 @@
 
 .lightbox_section article .close_slider {
     width: 40px;
+    cursor: pointer;
 }
 
 .lightbox_section article .container_img {
-    /* background-color: red; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -211,10 +222,16 @@
 
 .lightbox_section article .media_slider {
     width: inherit;
-    max-height: 85%;
+    height: 70%;
     object-fit: cover;
     border-radius: 5px;
     object-position: 50% 50%;
+    margin-top: 50px;
+}
+
+.lightbox_section .lightbox_content {
+    width: 100%;
+    height: 100%;
 }
 
 .lightbox_section article h2 {
@@ -227,9 +244,8 @@
 }
 
 .lightbox_section article .container_arrowBtn {
-    /* border: solid black; */
     position: absolute;
-    /* top: 40vh;*/
+    bottom: 50vh;
     width: 50%;
     display: flex;
     justify-content: space-between;
@@ -237,13 +253,15 @@
 
 .lightbox_section article .container_arrowBtn img {
     width: 100px;
+    cursor: pointer;
+
 }
-
-
-
 
 /* Total likes */
 .total_likes {
+    position: fixed;
+    bottom: 0;
+    right: 0;
     display: flex;
     justify-content: flex-end;
     margin-right: 30px;
