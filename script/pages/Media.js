@@ -11,7 +11,7 @@ import EventsLightbox from "../factories/lightboxFactory/EventsLightbox.js"
 export default class Media {
     constructor(media, photographer) {
         this.photographer = photographer
-        this.media = media
+        this.media = media.sort((a, b) => { return (b.likes > a.likes) ? 1 : -1; })
         this.likesArray = [];
         this.showMedia(this.media)
     }
@@ -36,6 +36,7 @@ export default class Media {
         modalForms.openModal(modalFormSection);
         modalForms.closeModal(modalFormSection);
         modalForms.form();
+        modalForms.closeModalWithKeyBoard()
     }
 
     // Affichage et gestion des événements des filtres 
@@ -43,15 +44,16 @@ export default class Media {
         const filterSelection = document.querySelector("#filter_selection");
         let filterMedia = new FilterMedia(this.media, this.photographer);
         filterSelection.innerHTML = filterMedia.createDom();
-        filterMedia.openselectField();
+        filterMedia.navigation();
     }
 
     // Affichage des médias du photographe selectionné
-    showMedia(filterSelected) {
+    showMedia(mediaFilter) {
+        this.likesArray = [];
         const mediaSection = document.querySelector(".media_section");
         mediaSection.innerHTML = "";
         let mediaDom = "";
-        filterSelected.forEach(medias => {
+        mediaFilter.forEach(medias => {
             let media = new MediaFactory(medias, this.photographer);
             mediaDom += media.createDom();
             this.likesArray.push(medias.likes);
@@ -70,22 +72,39 @@ export default class Media {
             let articleSelect = containerMedia[index];
             let mediaLength = 0;
 
+            const sectionTotalLikes = document.querySelector(".total_likes")
+
             for (let i = 0; i < containerMedia.length; i++) {
                 mediaLength = containerMedia[i].id = i;
             }
 
             media.addEventListener("click", () => {
+                lightboxDom = "";
                 lightboxSection.style.display = "block";
+                sectionTotalLikes.style.position = "initial"
 
                 let lightbox = new LightboxFactory(articleSelect);
                 lightboxDom += lightbox.createDom();
                 lightboxSection.querySelector(".lightbox_content").innerHTML = lightboxDom;
 
-                const eventLightbox = new EventsLightbox(articleSelect, lightboxSection, mediaLength);
-                eventLightbox.close();
-                eventLightbox.next();
-                eventLightbox.back();
+                const eventLightbox = new EventsLightbox(articleSelect, lightboxSection, mediaLength, sectionTotalLikes);
+                eventLightbox.navigation()
             });
+
+            media.addEventListener("keydown", (e) => {
+                if (e.code === "Enter") {
+                    lightboxSection.style.display = "block";
+                    sectionTotalLikes.style.position = "initial"
+
+                    let lightbox = new LightboxFactory(articleSelect);
+                    lightboxDom += lightbox.createDom();
+                    lightboxSection.querySelector(".lightbox_content").innerHTML = lightboxDom;
+
+                    const eventLightbox = new EventsLightbox(articleSelect, lightboxSection, mediaLength);
+                    eventLightbox.navigation()
+
+                }
+            })
         });
     };
 

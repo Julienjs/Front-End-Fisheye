@@ -10,11 +10,8 @@ export default class ModalContact {
 
         document.querySelector(".contact_button").addEventListener("click", () => {
             this.modalFormSection.style.display = "block";
-            // document.querySelector(".photograph-header img").tabIndex = "-1";
-            // document.querySelectorAll(".media_section article").tabIndex = "-1";
-            // document.querySelectorAll(".total_likes").tabIndex = "-1";
-            // document.querySelector(".total_likes h3").tabIndex = "-1";
-            // document.querySelector(".total_likes p").tabIndex = "-1";
+            const form = document.querySelector("#firstname");
+            form.focus()
         });
     };
 
@@ -22,6 +19,16 @@ export default class ModalContact {
     closeModal() {
         document.querySelector(".close_modalForm").addEventListener("click", () => {
             this.modalFormSection.style.display = "none";
+        })
+    };
+
+    // Ferme la modal en cliquant sur echap
+    closeModalWithKeyBoard() {
+        document.addEventListener('keydown', (e) => {
+
+            if (e.code === "Escape") {
+                this.modalFormSection.style.display = "none";
+            }
         })
     };
 
@@ -81,8 +88,8 @@ export default class ModalContact {
         return `
         <article>
             <div>
-              <h1 tabindex="0">Contactez-moi <br>${this.name}</h1>
-              <img src="assets/icons/close.svg" alt="logo croix" class="close_modalForm" tabindex="0" aria-label="fermer la fenêtre contact">
+              <h1 >Contactez-moi <br>${this.name}</h1>
+              <img src="assets/icons/close.svg" alt="logo croix" class="close_modalForm"aria-label="fermer la fenêtre contact">
             </div>
             <form method="get">
             <div class="form_group">

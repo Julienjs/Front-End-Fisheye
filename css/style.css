@@ -1,4 +1,4 @@
-@import url(photographer.min.css);
+@import url(photographer.css);
 
 body {
     font-family: "DM Sans", sans-serif;
@@ -102,9 +102,10 @@ h1 {
     height: 80px
 }
 
-.selector h3 {
+.selector label {
     width: 120px;
-    height: 30px
+    height: 30px;
+    font-weight: bold;
 }
 
 .selectField {
@@ -166,7 +167,8 @@ h1 {
     bottom: 35px
 }
 
-.option:hover {
+.option:hover,
+.option:focus {
     background-color: rgba(218, 103, 103, .7)
 }
 
@@ -186,6 +188,10 @@ h1 {
     object-fit: cover;
     height: 500px;
     border-radius: 5px
+}
+
+.media_section article .media:focus {
+    outline: 3px solid #d3573c;
 }
 
 .media_section article .media:hover .logo_play {

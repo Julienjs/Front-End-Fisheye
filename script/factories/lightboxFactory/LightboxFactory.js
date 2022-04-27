@@ -12,7 +12,7 @@ export default class LightboxFactory {
         if (video) {
             return new LightboxVideo(video.src, title);
         } else {
-            return new LightboxImage(image, title);
+            return new LightboxImage(image.src, title);
         }
     }
 }

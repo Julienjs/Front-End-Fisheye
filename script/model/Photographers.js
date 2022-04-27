@@ -9,7 +9,7 @@ export default class Photographers {
         <article class="photographer">
             <a href="../photographer.html?id=${this.id}" tabindex="0">
                  <img src="../../assets/photographers/${this.portrait}" alt="Photographe ${this.name}" class="image_profil" >
-                 <h2 tabindex="0">${this.name}</h2> 
+                 <h2>${this.name}</h2> 
             </a>
             <p tabindex="0" class="city">${this.city},${this.country}</p>
             <p tabindex="0" class="tagline">${this.tagline}</p>

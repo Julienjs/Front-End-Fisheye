@@ -8,14 +8,14 @@ export default class PhotographerHeader {
         return `
         <article>
            <div>
-              <h1 tabindex="0">${this.name}</h1>
-              <h3 tabindex="0">${this.city},${this.country}</h3>
+              <h1 tabindex="0" aria-label="photographe ${this.name}">${this.name} </h1>
+              <h3 tabindex="0" aria-label="habitant a ${this.country} a ${this.city}">${this.city},${this.country}</h3>
               <p tabindex="0">${this.tagline}</p>
            </div>
-           <button class="contact_button" aria-label="contacter la photographe">
+           <button class="contact_button" aria-label="contact me">
               Contactez-moi
            </button>
-           <img src="../../assets/photographers/${this.portrait}" class="image_profil" tabindex="0" alt="photographe Mimi Keel">
+           <img src="../../assets/photographers/${this.portrait}" class="image_profil" tabindex="0" alt="photographe ${this.name}">
         </article>
         `
     }

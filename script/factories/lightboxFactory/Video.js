@@ -7,7 +7,7 @@ export default class LightboxVideo {
     // Création du dom
     createDom() {
         return `
-        <video class="media_slider" src="${this.video}" controls="true">
+        <video class="media_slider" src="${this.video}" alt="${this.title}" controls="true">
         <h2 class="title">${this.title}</h2>
         `
     };
