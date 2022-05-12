@@ -14,7 +14,7 @@ export default class Video {
                 <div>
                     <h2 tabindex="0">${this.title}</h2>
                     <div class="container_like">
-                        <p aria-label="${this.likes} personnes aime ce média" style="cursor: pointer;">${this.likes}</p>
+                        <p aria-label="${this.likes} likes" style="cursor: pointer;">${this.likes}</p>
                         <i class="far fa-heart" tabindex="0" aria-expanded="true" aria-label="cliquez pour aimer cette vidéo"></i>
                     </div>
                 </div>

@@ -2,12 +2,13 @@
 <html lang="fr">
 
 <head>
-  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <link href="css/style.min.css" rel="stylesheet" type="text/css" />
   <meta charset="utf-8">
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/3dcad16f7a.js" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/@lottiefiles/lottie-player@0.4.0/dist/lottie-player.js"></script>
+  <script type="module" src="script/index.js" defer></script>
   <title>Fisheye - photographe </title>
 </head>
 
@@ -25,12 +26,12 @@
     <section class="lightbox_section">
       <article class="active">
         <div class="container_img">
-          <div class="container_closeBtn">
-            <img aria-label="close" class="close_slider" src="assets/icons/close-color.svg" alt="croix" tabindex="0">
-          </div>
+          <button class="container_closeBtn">
+            <img class="close_slider" src="assets/icons/close-color.svg" alt="close dialog" tabindex="0">
+          </button>
           <div class="container_arrowBtn">
-            <img src="assets/icons/arrow-back.svg" alt="flèche de retour" class="back" tabindex="0">
-            <img src="assets/icons/arrow-forward.svg" alt="flèche suivant" class="next" tabindex="0">
+            <img src="assets/icons/arrow-back.svg" alt="previous image" class="back" tabindex="0">
+            <img src="assets/icons/arrow-forward.svg" alt="next image" class="next" tabindex="0">
           </div>
           <div class="lightbox_content">
           </div>
@@ -39,5 +40,5 @@
     </section>
     <section class="total_likes"></section>
   </main>
-  <script type="module" src="script/index.js"></script>
+
 </body>

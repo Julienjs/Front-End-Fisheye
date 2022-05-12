@@ -1,7 +1,6 @@
 export default class PhotographerHeader {
     constructor(photographer) {
         Object.assign(this, photographer);
-        console.log(this.portrait);
     }
 
     // Création du dom

@@ -202,7 +202,10 @@
 .lightbox_section article .container_closeBtn {
     position: relative;
     top: 10vh;
-    width: 115%;
+    right: 0;
+    left: 47vh;
+    border: none;
+    background-color: transparent;
     display: flex;
     justify-content: flex-end;
 }

@@ -12,7 +12,7 @@ export default class Image {
                 <div>
                     <h2 tabindex="0">${this.title}</h2>
                     <div class="container_like">
-                        <p tabindex="0" aria-label="${this.likes} personnes aime ce média" style="cursor: pointer;">${this.likes}</p>
+                        <p tabindex="0" aria-label="${this.likes} likes" style="cursor: pointer;">${this.likes}</p>
                         <i tabindex="0" role="button" aria-pressed="false" aria-label="cliquez pour aimer cette photo" class="far fa-heart"></i>
                     </div>
                 </div>
