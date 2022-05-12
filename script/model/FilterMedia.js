@@ -152,8 +152,7 @@ export default class FilterMedia {
         popular.setAttribute("aria-selected", true)
         date.setAttribute("aria-selected", false)
         break;
-      case "Date":
-        selectField.setAttribute("aria-labelledby", "Date")
+      case "Date": selectField.setAttribute("aria-labelledby", "Date")
 
         selectField.setAttribute("aria-activedescendant", "Date")
 
