@@ -9,7 +9,7 @@ export default class Video {
     createDom() {
         return `
         <article class="container_media">
-        <img src="assets/icons/play.svg" class="logo_play">
+        <img src="assets/icons/play.svg" class="logo_play" alt="lecture">
         <video class="media" tabindex="0" alt="${this.title}" src="../../assets/media/${this.photographerName.split(' ')[0]}/${this.video}"></video>
                 <div>
                     <h2 tabindex="0">${this.title}</h2>

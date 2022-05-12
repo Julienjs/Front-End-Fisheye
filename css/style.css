@@ -65,7 +65,7 @@ h1 {
 }
 
 .photographer_section article small {
-    color: rgb(155, 154, 154)
+    color: rgb(44, 44, 44)
 }
 
 .image_profil {
@@ -181,7 +181,7 @@ h1 {
     flex-direction: column;
     margin-bottom: 20px;
     width: 30%;
-    cursor: pointer
+    cursor: pointer;
 }
 
 .media_section article .media {

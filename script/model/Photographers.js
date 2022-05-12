@@ -1,6 +1,7 @@
 export default class Photographers {
     constructor(photographer) {
         Object.assign(this, photographer);
+        console.log(this.portrait);
     }
 
     // Création du dom 
@@ -13,7 +14,7 @@ export default class Photographers {
             </a>
             <p tabindex="0" class="city">${this.city},${this.country}</p>
             <p tabindex="0" class="tagline">${this.tagline}</p>
-            <small aria-labelledby="${this.price}€ par jour" tabindex="0">${this.price}€/jour</small>
+            <small tabindex="0">${this.price}€/jour</small>
         </article>
         `
     };

@@ -1,6 +1,7 @@
 export default class PhotographerHeader {
     constructor(photographer) {
         Object.assign(this, photographer);
+        console.log(this.portrait);
     }
 
     // Création du dom
@@ -9,7 +10,7 @@ export default class PhotographerHeader {
         <article>
            <div>
               <h1 tabindex="0" aria-label="photographe ${this.name}">${this.name} </h1>
-              <h3 tabindex="0" aria-label="habitant a ${this.country} a ${this.city}">${this.city},${this.country}</h3>
+              <p tabindex="0" aria-label="habitant a ${this.country} a ${this.city}" class="country">${this.city},${this.country}</p>
               <p tabindex="0">${this.tagline}</p>
            </div>
            <button class="contact_button" aria-label="contact me">

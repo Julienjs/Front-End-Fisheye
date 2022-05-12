@@ -170,7 +170,7 @@ export default class FilterMedia {
       <article class="selector">
       <label>Trier par :</label>
       <div class="header-selector">
-        <div class="selectField border" role="button" tabIndex="0" aria-expanded="false" aria-haspopup="listbox" aria-labelledby="" aria-activedescendant="">
+        <div class="selectField border" role="button" tabIndex="0" aria-expanded="false" aria-haspopup="listbox">
           <p id="selectText">Popularité</p>
           <img src="assets/icons/down-arrow.svg" alt="" class="arrow">
         </div>
