@@ -6,23 +6,6 @@ export default class Like {
         this.price = price;
     }
 
-
-    // navigation(containerLike) {
-    //     containerLike.forEach((item) => {
-    //         let icon = item.querySelector("i");
-
-    //         item.lastElementChild.addEventListener("click", (e) => {
-    //             this.addRemoveLike(icon, item, e);
-    //         });
-
-    //         item.lastElementChild.addEventListener("keydown", (e) => {
-    //             if (e.code === "Enter") {
-    //                 this.addRemoveLike(icon, item, e);
-    //             }
-    //         })
-    //     });
-    // }
-
     // Ajout ou retrait d'un like
 
     addRemoveLike(containerLike) {
@@ -53,7 +36,6 @@ export default class Like {
                 if (e.code === "Enter") {
                     if (!like) {
                         like = true;
-                        console.log(like);
                         item.firstElementChild.textContent++;
                         this.total++
                         icon.classList.remove('far')
@@ -61,7 +43,6 @@ export default class Like {
                         document.querySelector(".total_likes h3").innerHTML = `${this.total} <i class="fas fa-heart"></i>`;
                     } else {
                         like = false;
-                        console.log(like);
                         icon.classList.remove('fas')
                         icon.classList.add('far')
                         item.firstElementChild.textContent--;
